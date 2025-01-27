@@ -23,11 +23,15 @@ function App() {
       item: "das Brot"
     }
   ])
+
+  const handleCheck = (items) => {
+    console.log(items)
+  }
   
   return (
     <div className="App">
       <Header />
-      <Main items={items} />
+      <Main items={items} handleCheck={handleCheck} />
       <Footer />
     </div>
   );

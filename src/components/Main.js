@@ -2,10 +2,10 @@ import React from 'react'
 import GroceryItemsList from './GroceryItemsList'
 import '../styles/main.css'
 
-const Main = ({ items }) => {
+const Main = ({ items, handleCheck }) => {
   return (
     <main>
-        <GroceryItemsList items={items} />
+        <GroceryItemsList items={items} handleCheck={handleCheck} />
     </main>
   )
 }
