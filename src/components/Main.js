@@ -1,9 +1,12 @@
 import React from 'react'
+import GroceryItemsList from './GroceryItemsList'
 import '../styles/main.css'
 
-const Main = () => {
+const Main = ({ items }) => {
   return (
-    <main>Main</main>
+    <main>
+        <GroceryItemsList items={items} />
+    </main>
   )
 }
 

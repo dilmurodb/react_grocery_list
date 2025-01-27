@@ -4,3 +4,16 @@ main {
     margin: 0 auto;
     background-color: papayawhip;
 }
+
+ul {
+    margin-top: 0;
+    list-style: none;
+}
+
+.item-line {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    border: 1px solid black;
+    background-color: aquamarine;
+}
