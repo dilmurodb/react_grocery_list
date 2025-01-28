@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 
+
 function App() {
 
   const [items, setItems] = useState([
@@ -24,6 +25,8 @@ function App() {
     }
   ])
 
+  const [newItem, setNewItem] = useState('');
+
   const handleCheck = (id) => {
     const modifiedItemsList = items.map(item => item.id === id ? { ...item, checked: !item.checked } : item);
     setItems(modifiedItemsList)
@@ -33,11 +36,16 @@ function App() {
     const modifiedItemsList = items.filter(item => item.id !== id);
     setItems(modifiedItemsList)
   }
+
+  const addNewItem = (e) => {
+    e.preventDefault()
+    // console.log(e)
+  }
   
   return (
     <div className="App">
       <Header />
-      <Main items={items} handleCheck={handleCheck} handleDelete={handleDelete} />
+      <Main items={items} handleCheck={handleCheck} handleDelete={handleDelete} addNewItem={addNewItem} newItem={newItem} />
       <Footer />
     </div>
   );
