@@ -24,8 +24,10 @@ function App() {
     }
   ])
 
-  const handleCheck = (items) => {
-    console.log(items)
+  const handleCheck = (id) => {
+    console.log(id)
+    const modifiedItemsList = items.map(item => item.id === id ? { ...item, checked: !item.checked } : item);
+    setItems(modifiedItemsList)
   }
   
   return (
