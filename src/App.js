@@ -29,11 +29,17 @@ function App() {
     const modifiedItemsList = items.map(item => item.id === id ? { ...item, checked: !item.checked } : item);
     setItems(modifiedItemsList)
   }
+
+  const handleDelete = (id) => {
+    console.log(id)
+    const modifiedItemsList = items.filter(item => item.id !== id);
+    setItems(modifiedItemsList)
+  }
   
   return (
     <div className="App">
       <Header />
-      <Main items={items} handleCheck={handleCheck} />
+      <Main items={items} handleCheck={handleCheck} handleDelete={handleDelete} />
       <Footer />
     </div>
   );
