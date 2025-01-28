@@ -37,6 +37,8 @@ function App() {
     setItems(modifiedItemsList)
   }
 
+  const submitNewItem = () => {}
+
   const addNewItem = (e) => {
     e.preventDefault()
     // console.log(e)
@@ -45,7 +47,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Main items={items} handleCheck={handleCheck} handleDelete={handleDelete} addNewItem={addNewItem} newItem={newItem} />
+      <Main items={items} handleCheck={handleCheck} handleDelete={handleDelete} addNewItem={addNewItem} newItem={newItem} setNewItem={setNewItem} />
       <Footer />
     </div>
   );

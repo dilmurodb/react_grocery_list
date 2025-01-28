@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AddNewItem = ({ items, addNewItem, newItem }) => {
+const AddNewItem = ({ items, addNewItem, newItem, setNewItem }) => {
   return (
     <form>
         <label htmlFor="addItem">Add item</label>
@@ -10,7 +10,8 @@ const AddNewItem = ({ items, addNewItem, newItem }) => {
             id="addItem" 
             required 
             placeholder="Add item..." 
-            onChange={(e) => addNewItem(e.target.value)} 
+            value={newItem}
+            onChange={(e) => setNewItem(e.target.value)} 
             onSubmit={(e) => addNewItem()} 
         />
         <button type="submit">Add Item</button>
