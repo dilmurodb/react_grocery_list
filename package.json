@@ -4,6 +4,7 @@
   "homepage": "https://dilmurodb.github.io/react_grocery_list",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-scripts": "5.0.1"
