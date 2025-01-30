@@ -7,34 +7,25 @@ import Footer from './components/Footer';
 
 function App() {
 
-  const [items, setItems] = useState([
-    {
-      id: 1,
-      checked: false,
-      item: "der Wein"
-    },
-    {
-      id: 2,
-      checked: true,
-      item: "der Apfel"
-    },
-    {
-      id: 3,
-      checked: false,
-      item: "das Brot"
-    }
-  ])
+  const [items, setItems] = useState(JSON.parse(localStorage.getItem('shoppinglist')))
 
   const [newItem, setNewItem] = useState('');
 
+  const setAndSaveItems = (newItems) => {
+    setItems(newItems);
+    localStorage.setItem('shoppinglist', JSON.stringify(newItems));
+  }
+
   const handleCheck = (id) => {
     const modifiedItemsList = items.map(item => item.id === id ? { ...item, checked: !item.checked } : item);
-    setItems(modifiedItemsList)
+    setItems(modifiedItemsList);
+    setAndSaveItems(modifiedItemsList);
   }
 
   const handleDelete = (id) => {
     const modifiedItemsList = items.filter(item => item.id !== id);
-    setItems(modifiedItemsList)
+    setItems(modifiedItemsList);
+    setAndSaveItems(modifiedItemsList);
   }
 
   const addNewItem = (item) => {
@@ -42,6 +33,7 @@ function App() {
     const myNewItem = {id: id, checked: false, item: item};
     const modifiedItemsList = [...items, myNewItem];
     setItems(modifiedItemsList);
+    setAndSaveItems(modifiedItemsList);
   }
   
   const handleSubmit = (e) => {
