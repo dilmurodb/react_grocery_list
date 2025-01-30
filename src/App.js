@@ -39,7 +39,7 @@ function App() {
 
   const addNewItem = (item) => {
     const id = items.length ? items[items.length - 1].id + 1 : 1;
-    const myNewItem = {id: id, checked: false, item: newItem};
+    const myNewItem = {id: id, checked: false, item: item};
     const modifiedItemsList = [...items, myNewItem];
     setItems(modifiedItemsList);
   }
