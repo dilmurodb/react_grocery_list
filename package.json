@@ -1,7 +1,7 @@
 {
   "name": "react_grocery_list",
   "version": "0.1.0",
-  "homepage": "https://dilmurodb.github.io/grocery_list_bukharov",
+  "homepage": "https://dilmurodb.github.io/react_grocery_list",
   "private": true,
   "dependencies": {
     "cra-template": "1.2.0",
