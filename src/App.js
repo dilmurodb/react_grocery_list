@@ -37,17 +37,25 @@ function App() {
     setItems(modifiedItemsList)
   }
 
-  const submitNewItem = () => {}
-
-  const addNewItem = (e) => {
-    e.preventDefault()
-    // console.log(e)
+  const addNewItem = (item) => {
+    const id = items.length ? items[items.length - 1].id + 1 : 1;
+    const myNewItem = {id: id, checked: false, item: newItem};
+    const modifiedItemsList = [...items, myNewItem];
+    setItems(modifiedItemsList);
   }
   
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (!newItem) return;
+    addNewItem(newItem);
+    setNewItem('');
+  }
+
+
   return (
     <div className="App">
       <Header />
-      <Main items={items} handleCheck={handleCheck} handleDelete={handleDelete} addNewItem={addNewItem} newItem={newItem} setNewItem={setNewItem} />
+      <Main items={items} handleCheck={handleCheck} handleDelete={handleDelete} handleSubmit={handleSubmit} addNewItem={addNewItem} newItem={newItem} setNewItem={setNewItem} />
       <Footer />
     </div>
   );

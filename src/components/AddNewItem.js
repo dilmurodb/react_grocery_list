@@ -1,8 +1,8 @@
 import React from 'react'
 
-const AddNewItem = ({ items, addNewItem, newItem, setNewItem }) => {
+const AddNewItem = ({ handleSubmit, addNewItem, newItem, setNewItem }) => {
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
         <label htmlFor="addItem">Add item</label>
         <input 
             autoFocus 
@@ -12,7 +12,6 @@ const AddNewItem = ({ items, addNewItem, newItem, setNewItem }) => {
             placeholder="Add item..." 
             value={newItem}
             onChange={(e) => setNewItem(e.target.value)} 
-            onSubmit={(e) => addNewItem()} 
         />
         <button type="submit">Add Item</button>
     </form>
